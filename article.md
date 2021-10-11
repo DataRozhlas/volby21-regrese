@@ -12,13 +12,13 @@ options: [noheader, nopic] #wide, noheader (, nopic)
 <link rel="stylesheet" href="https://data.irozhlas.cz/psp21-srovnani/styl.css">
 
 <select name="topic" id="topic">
-    <option value="ucast">Účast</option>
+    <option value="ano" selected>ANO</option>
     <option value="spolu">SPOLU</option>
     <option value="pirstan">Piráti+STAN</option>
-    <option value="ano" selected>ANO</option>
     <option value="spd">SPD</option>
     <option value="cssd">ČSSD</option>
     <option value="ksc">KSČM</option>
+    <option value="ucast">Účast</option>
 </select>
 
 <form action="?" id='geocoder'>
@@ -38,7 +38,7 @@ Radost z výsledku voleb budou mít letos častěji lidé, kterým se už před 
 
 Ukazují to analýzy politologa Jakuba Lyska z Univerzity Palackého v Olomouci: „Střední třída, lidé ve městech střední velikosti, podpořili koalici Spolu. Nebyla to Praha, nebylo to Brno, kdo potopil Andreje Babiše, bylo to maloměsto: živnostníci, učitelé a lékaři v menších městech,“ říká. „Patrně si uvědomili, že migrace nebude největším problémem tohoto volebního období, ale bude to ekonomika. A koalici Spolu se podařilo ekonomická témata velmi dobře zvednout.“
 
-Podle statistického modelu, který se osvědčil už v předchozích volbách,
+Podle statistického modelu, který se osvědčil v předchozích volbách,
 
 Proč zmizely KSČM a ČSSD z poslanecké sněmovny? Důvodem je Andrej Babiš. Tým Andreje Babiše velmi chytře a velmi dobře zvedl téma migrace. Tím mobilizoval vlastní vboliče. Víme z dat, že to byli zejména senioři, na které velmi dovře působil závěrečný klip. Jednak tím zvedl volební účast, protože mobilizoval i voliče Spolu z těch středně velkých měst a zároveň přebral poslwední zbytek voličů KSČM a ČSSD.
 
