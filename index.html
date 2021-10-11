@@ -216,165 +216,71 @@
     </h1>
     <script>
       if (window.location.href.indexOf("www.irozhlas") < 0) {
-        document.getElementById("snfl-title-div").innerHTML = "Data z mobilů:<br>Praha se denně nafoukne o polovinu, v centru jsou návštěvníci v převaze";
+        document.getElementById("snfl-title-div").innerHTML = "Srovnávací mapa: Kde parlamentní strany od minulých voleb ztratily a kde si polepšily?";
       }
     </script>
   </div>
 
-  <div class="row-main row-main--narrow"> 
+  <div class="row-main row-main--narrow">
     <p class="text-bold text-lg">
-      Skoro 140 tisíc lidí přijede do Prahy každý den za prací. Míří hlavně do kancelářských budov a do centra města. S nimi pak dorazí i přes půl milionu návštěvníků. Ukázala to analýza dat o pohybu mobilních telefonů, kterou si nyní město nechává zpracovat.
+      Statistická analýza volebních výsledků a složení obyvatelstva v jednotlivých okrscích naznačuje, v čem se liší voliči stran, které se dostaly do parlamentu.
     </p>
   </div>
 
   <!--[[ZPRAVY_SNOWFALL_METADATA:]]-->
 
   <div class="row-main row-main--narrow">
-    <figure class="b-detail__img"><img src="https://interaktivni.rozhlas.cz/brexit/media/cover.jpg" width="100%" /><figcaption>Foto <a href='https://ctk.cz'>ČTK</a></figcaption></figure>
-    <div class="b-inline b-inline--left"><div class="b-inline__wrap"><div class="b-inline__content"><div class="text-sm">
-    <p>
-    <b>KAREL HYNEK MÁCHA</b>
-    </p><p>
-    Karel Hynek Mácha (16. listopadu 1810 Praha-Malá Strana[1] – 6. listopadu 1836 Litoměřice[2]) byl český básník a&nbsp;prozaik, představitel českého romantismu a&nbsp;zakladatel moderní české poezie. Proslavil se jak svým životem, tak dílem, jemuž dominuje Máj (1836).
-    </p>
-</div></div></div></div>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
+<link rel="stylesheet" href="https://data.irozhlas.cz/psp21-srovnani/styl.css">
 
-<p>Během dne se lidé v&nbsp;Praze soustřeďují v&nbsp;okolí administrativních center a&nbsp;obchodů, po poledni se tak nejvíc zahustí okolí Andělu, centrum Prahy (Vodičkova ulice a&nbsp;Petrské náměstí) a&nbsp;Brumlovka nedaleko Budějovické. Na poslední jmenované adrese sídlí řada velkých korporací, mezi nimi i&nbsp;Microsoft nebo ČEZ. Pro srovnání, na zmíněných místech je ve „špičce“ okolo šesti stovek osob na jeden hektar, průměr Prahy je 25 obyvatel na <a href="https://cs.wikipedia.org/wiki/Hektar">hektar</a> (Václavské náměstí má rozlohu asi 4 hektary).</p>
-<p>Naopak v&nbsp;noci se nejvíc lidí se „namačká“ ve Vršovicích, jde o&nbsp;430 osob na hektar.</p>
-<p>Detaily si můžete prohlédnout v&nbsp;následující mapě, kterou z&nbsp;dat mobilních operátorů zpracoval pražský <a href="http://www.iprpraha.cz/">Institut plánování a&nbsp;rozvoje</a>.</p>
-</div><div class="row-main row-main--article"><i>Pokud vás zajímá, „kolik“ lidí bývá ve dne a&nbsp;v noci ve vaší čtvrti, najděte si ji na mapě, přepněte se na časové řezy, vyberte přepínač hustota osob a&nbsp;potom pohybujte „posuvníkem“ nahoře.</i></div><div class="row-main row-main--narrow">
+<select name="topic" id="topic">
+    <option value="ucast">Účast</option>
+    <option value="spolu">SPOLU</option>
+    <option value="pirstan">Piráti+STAN</option>
+    <option value="ano" selected>ANO</option>
+    <option value="spd">SPD</option>
+    <option value="cssd">ČSSD</option>
+    <option value="ksc">KSČM</option>
+</select>
 
-<h2 id="data-na-prodej">Data na prodej</h2>
-<div class="b-inline b-inline--right"><div class="b-inline__wrap"><div class="b-inline__content"><div class="text-sm">
-    <p>
-    <b>KAREL HYNEK MÁCHA</b>
-    </p><p>
-    Karel Hynek Mácha (16. listopadu 1810 Praha-Malá Strana[1] – 6. listopadu 1836 Litoměřice[2]) byl český básník a&nbsp;prozaik, představitel českého romantismu a&nbsp;zakladatel moderní české poezie. Proslavil se jak svým životem, tak dílem, jemuž dominuje Máj (1836).
-    </p>
-</div></div></div></div>
+<form action="?" id='geocoder'>
+    <div class="inputs">
+        <input type="text" id="inp-geocode" placeholder="Zadejte obec či adresu...">
+        <input type="submit" id="inp-btn" value="Najít">
+    </div>
+</form>
+<br>
+</div><div class="row-main row-main--article"><div id='obce_rozdily_mapa'></div></div><div class="row-main row-main--narrow">
+</br>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="https://data.irozhlas.cz/psp21-srovnani/js/script.js"></script>
 
-<p>I pokud netelefonujeme nebo neposíláme SMS, telefon pravidelně komunikuje s&nbsp;vysílači v&nbsp;síti mobilního operátora. Z dat o&nbsp;síle signálu a&nbsp;použité anténě je možné odvodit, kde se přibližně telefon nachází a&nbsp;jak dlouhou dobu na místě strávil.</p>
-<p>Mobilní operátor má <a href="https://www.zakonyprolidi.cz/cs/2005-127/zneni-20160919#p97-3">„zákonnou povinnost“</a> takové informace uchovávat, a&nbsp;to půl roku do minulosti, přistupovat k&nbsp;nim ale mohou jen bezpečnostní složky, typicky policie nebo rozvědka.</p>
-<p>Operátoři ale obdobné informace mohou anonymizovat (tedy „zbavit“ identifikace konkrétního uživatele) a&nbsp;agregovat, tedy spojit informace o&nbsp;jednotlivcích do jakýchsi skupin. Výsledná obecná čísla pak přeprodávají dál, například marketingovým firmám či dopravním analytikům. Zpětně z&nbsp;nich nejde dovodit, kde se pohybuje každý jednotlivec, dávají ale určitý přehled o&nbsp;obecném chování obyvatel nějakého místa.</p>
+<p>Radost z&nbsp;výsledku voleb budou mít letos častěji lidé, kterým se už před nimi dařilo dobře. Zatímco místa, kde se vyskytuje víc vysokoškoláků či podnikatelů, volily častěji jednu z&nbsp;koalic, oblasti s&nbsp;vyšším podílem nezaměstnaných či lidí v&nbsp;exekuci se spíše přiklonily k&nbsp;ANO či k&nbsp;SPD. Na rozdíl od předchozích voleb nebyl tak výrazný kontrast mezi výsledky ve velkoměstech a&nbsp;sídlech střední velikosti.</p>
+<p>Ukazují to analýzy politologa Jakuba Lyska z&nbsp;Univerzity Palackého v&nbsp;Olomouci: „Střední třída, lidé ve městech střední velikosti, podpořili koalici Spolu. Nebyla to Praha, nebylo to Brno, kdo potopil Andreje Babiše, bylo to maloměsto: živnostníci, učitelé a&nbsp;lékaři v&nbsp;menších městech,“ říká. „Patrně si uvědomili, že migrace nebude největším problémem tohoto volebního období, ale bude to ekonomika. A koalici Spolu se podařilo ekonomická témata velmi dobře zvednout.“</p>
+<p>Podle statistického modelu, který se osvědčil už v&nbsp;předchozích volbách,</p>
+<p>Proč zmizely KSČM a&nbsp;ČSSD z&nbsp;poslanecké sněmovny? Důvodem je Andrej Babiš. Tým Andreje Babiše velmi chytře a&nbsp;velmi dobře zvedl téma migrace. Tím mobilizoval vlastní vboliče. Víme z&nbsp;dat, že to byli zejména senioři, na které velmi dovře působil závěrečný klip. Jednak tím zvedl volební účast, protože mobilizoval i&nbsp;voliče Spolu z&nbsp;těch středně velkých měst a&nbsp;zároveň přebral poslwední zbytek voličů KSČM a&nbsp;ČSSD.</p>
+<p>Nejsou to nějaké velké přelivy. Ananlýza výsledků voleb ukazuje, že ten poslední zbytek výáhajících voličů jestli voluit KSČNM nebio ANO, hjnutí Ano v&nbsp;tyěchto volbách přebralo. Tím pádem se obě strany dostaly pod 10 procent.</p>
+<p>Skutečně to zatím vypadá, že volební účast ve strukturálně postižených krajích bude nižší... Vol. účast je relativně nižší oproti volbám 2017 v&nbsp;obcích, kde je vyšší podíl seniorů, vyšší nezaměstnanost a&nbsp;vyšší podíl exekucí...</p>
+<p>Polarizace byla velká, hnutí ANO to přestřelilo. Kampaň hnutí ANO zaměřená na uprchlíky a&nbsp;proti Pirátům mobilizovala seniory. Naopak ta útočnost mobilizovala příznivce obou koalic. To, že lidé znali mnoho lokálních lídrů koalice SPOLU nebo STAN rozhodlo v&nbsp;neprospěch Pirátů spíše než negativní kampaň AB. Piráti jsou strukturálně slabou stranou, v&nbsp;krajích nemají silné kandidáty. Nejsou zakořenění v&nbsp;regionech.</p>
+<p>Letošní volby, když se podíváme na kroužky u&nbsp;koalice SPOLU ukazují, že jsou to voliči, kteří podporují lokální osobnosti v&nbsp;místě bydliště. To rozhodlo ve prospěch koalice SPOLU a&nbsp;ve prospěch kroužkování Starostů, kteří získali nepoměrně více mandátů.</p>
+<p>Pirátská strana nemá tak výrazné osobnosti. Oproti tomu kandidátka Starostů a&nbsp;nezávislých byla velmi dobře postavena. Ve spoustě krajů neměli Piráti na kandidátce ani své lokální a&nbsp;regionální lídry.</p>
+<p>Myslím, že právě v&nbsp;Sudetech od Andreje Babiše odešli voliči střední třídy. Anti migrační politikou tuto vrstvu obyvatel nejspíše neoslovil, kampaň pro ně byla nejspíše příliš agresivní. KSČM a&nbsp;ČSSD si možná za ten volební výsledek mohou samy. Poslední zbytky těchto voličů Andrej Babiš přebral.</p>
+<p>Lidem začalo docházet, že se zdražuje a&nbsp;koalice SPOLU toto téma dobře uchopila a&nbsp;začala o&nbsp;tom mluvit. Spoustě lidem, kteří se nakonec museli rozhodnout mezi Andrejem Babišem a&nbsp;jinou stranou, tak neměli moc na výběr. ČSSD měla program založený na distribuci státních zdrojů, dluh a&nbsp;deficit ČR je velký, spousta lidí si to racionálně vyhodnotila, že bude lepší zvolit více pravicovou vládu, která bude mít za úkol státní finance napravit.</p>
+<p>Spousta lidí středních vrstev se podívala na hlasovací lístky a&nbsp;vybrala koalici, ve které viděla známé tváře.</p>
+<p>Andrej Babiš říká, že mu Praha prohrála volby. Není to pravda. Prohrály mu to středně velká města po celé republice.</p>
 
     <p class="meta meta--right meta--big">
       <!--[[ZPRAVY_SNOWFALL_AUTHORS:FOOTER]]-->
     </p>
   </div>
+  <div class="row-main row-main--narrow">
+		<!--[[ZPRAVY_SNOWFALL_KEYWORDS:]]-->
+	</div>
   <!--[[ZPRAVY_SNOWFALL_RELATED:ARTICLES]]-->
 </div>
-<script>/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./js/script.js");
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ "./js/byeie.js":
-/*!*********************!*\
-  !*** ./js/byeie.js ***!
-  \*********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("if (navigator.appName === \"Microsoft Internet Explorer\" || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/))) {\n  var warn = document.createElement(\"div\");\n  warn.innerHTML = \"Používáte zastaralý Internet Explorer, takže vám části tohoto webu nemusí fungovat. Navíc to <a target=\\\"_blank\\\" style=\\\"color:white;\\\" rel=\\\"noopener noreferrer\\\" href=\\\"https://www.zive.cz/clanky/microsoft-internet-explorer-neni-prohlizec-prestante-ho-tak-pouzivat/sc-3-a-197149/default.aspx\\\">není bezpečné</a>, zvažte přechod na <a target=\\\"_blank\\\" style=\\\"color:white;\\\" rel=\\\"noopener noreferrer\\\" href=\\\"https://www.mozilla.org/cs/firefox/new/\\\">jiný prohlížeč</a>.\";\n  warn.style.cssText = \"text-align:center;position:absolute;width:100%;height:auto;opacity:1;z-index:100;background-color:#d52834;top:37px;padding-top:4px;padding-bottom:3px;color:white;\";\n  document.body.appendChild(warn);\n}\n\n//# sourceURL=webpack:///./js/byeie.js?");
-
-/***/ }),
-
-/***/ "./js/script.js":
-/*!**********************!*\
-  !*** ./js/script.js ***!
-  \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _byeie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./byeie */ \"./js/byeie.js\");\n/* harmony import */ var _byeie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_byeie__WEBPACK_IMPORTED_MODULE_0__);\n // loučíme se s IE\n\n/*\r\n// snadné načtení souboru pro každého!\r\nfetch(\"https://blabla.cz/blabla.json\")\r\n  .then(response => response.json()) // nebo .text(), když to není json\r\n  .then(data => {\r\n    // tady jde provést s daty cokoliv\r\n  });\r\n*/\n\n//# sourceURL=webpack:///./js/script.js?");
-
-/***/ })
-
-/******/ });</script>
+<script>(()=>{var e={43:()=>{if("Microsoft Internet Explorer"===navigator.appName||navigator.userAgent.match(/Trident/)||navigator.userAgent.match(/rv:11/)){var e=document.createElement("div");e.innerHTML='Používáte zastaralý Internet Explorer, takže vám části tohoto webu nemusí fungovat. Navíc to <a target="_blank" style="color:white;" rel="noopener noreferrer" href="https://www.zive.cz/clanky/microsoft-internet-explorer-neni-prohlizec-prestante-ho-tak-pouzivat/sc-3-a-197149/default.aspx">není bezpečné</a>, zvažte přechod na <a target="_blank" style="color:white;" rel="noopener noreferrer" href="https://www.mozilla.org/cs/firefox/new/">jiný prohlížeč</a>.',e.style.cssText="text-align:center;position:absolute;width:100%;height:auto;opacity:1;z-index:100;background-color:#d52834;top:37px;padding-top:4px;padding-bottom:3px;color:white;",document.body.appendChild(e)}}},t={};function r(o){var n=t[o];if(void 0!==n)return n.exports;var a=t[o]={exports:{}};return e[o](a,a.exports,r),a.exports}r.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return r.d(t,{a:t}),t},r.d=(e,t)=>{for(var o in t)r.o(t,o)&&!r.o(e,o)&&Object.defineProperty(e,o,{enumerable:!0,get:t[o]})},r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{"use strict";r(43)})()})();</script>
 		</article>
 			<div class="wrapper">
 				<div class="row-main">

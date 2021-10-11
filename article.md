@@ -1,38 +1,61 @@
-title: "Data z mobilů:<br>Praha se denně nafoukne o polovinu, v centru jsou návštěvníci v převaze"
-perex: "Skoro 140 tisíc lidí přijede do Prahy každý den za prací. Míří hlavně do kancelářských budov a do centra města. S nimi pak dorazí i přes půl milionu návštěvníků. Ukázala to analýza dat o pohybu mobilních telefonů, kterou si nyní město nechává zpracovat."
+title: "Srovnávací mapa: Kde parlamentní strany od minulých voleb ztratily a kde si polepšily?"
+perex: "Statistická analýza volebních výsledků a složení obyvatelstva v jednotlivých okrscích naznačuje, v čem se liší voliči stran, které se dostaly do parlamentu."
 coverimg: https://interaktivni.rozhlas.cz/brexit/media/cover.jpg
 coverimg_note: "Foto <a href='https://ctk.cz'>ČTK</a>"
 styles: []
 libraries: [] #jquery, d3, highcharts, datatables
-options: [noheader] #wide, noheader (, nopic)
+options: [noheader, nopic] #wide, noheader (, nopic)
+
 ---
-<left>
-	<p>
-	<b>KAREL HYNEK MÁCHA</b>
-	</p><p>
-	Karel Hynek Mácha (16. listopadu 1810 Praha-Malá Strana[1] – 6. listopadu 1836 Litoměřice[2]) byl český básník a prozaik, představitel českého romantismu a zakladatel moderní české poezie. Proslavil se jak svým životem, tak dílem, jemuž dominuje Máj (1836).
-	</p>
-</left>
 
-Během dne se lidé v Praze soustřeďují v okolí administrativních center a obchodů, po poledni se tak nejvíc zahustí okolí Andělu, centrum Prahy (Vodičkova ulice a Petrské náměstí) a Brumlovka nedaleko Budějovické. Na poslední jmenované adrese sídlí řada velkých korporací, mezi nimi i Microsoft nebo ČEZ. Pro srovnání, na zmíněných místech je ve "špičce" okolo šesti stovek osob na jeden hektar, průměr Prahy je 25 obyvatel na [hektar](https://cs.wikipedia.org/wiki/Hektar) (Václavské náměstí má rozlohu asi 4 hektary).
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
+<link rel="stylesheet" href="https://data.irozhlas.cz/psp21-srovnani/styl.css">
 
-Naopak v noci se nejvíc lidí se "namačká" ve Vršovicích, jde o 430 osob na hektar.
+<select name="topic" id="topic">
+    <option value="ucast">Účast</option>
+    <option value="spolu">SPOLU</option>
+    <option value="pirstan">Piráti+STAN</option>
+    <option value="ano" selected>ANO</option>
+    <option value="spd">SPD</option>
+    <option value="cssd">ČSSD</option>
+    <option value="ksc">KSČM</option>
+</select>
 
-Detaily si můžete prohlédnout v následující mapě, kterou z dat mobilních operátorů zpracoval pražský [Institut plánování a rozvoje](http://www.iprpraha.cz/).
+<form action="?" id='geocoder'>
+    <div class="inputs">
+        <input type="text" id="inp-geocode" placeholder="Zadejte obec či adresu...">
+        <input type="submit" id="inp-btn" value="Najít">
+    </div>
+</form>
+<br>
+<wide><div id='obce_rozdily_mapa'></div></wide>
+</br>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="https://data.irozhlas.cz/psp21-srovnani/js/script.js"></script>
 
-<wide><i>Pokud vás zajímá, "kolik" lidí bývá ve dne a v noci ve vaší čtvrti, najděte si ji na mapě, přepněte se na časové řezy, vyberte přepínač hustota osob a potom pohybujte "posuvníkem" nahoře.</i></wide>
+Radost z výsledku voleb budou mít letos častěji lidé, kterým se už před nimi dařilo dobře. Zatímco místa, kde se vyskytuje víc vysokoškoláků či podnikatelů, volily častěji jednu z koalic, oblasti s vyšším podílem nezaměstnaných či lidí v exekuci se spíše přiklonily k ANO či k SPD. Na rozdíl od předchozích voleb nebyl tak výrazný kontrast mezi výsledky ve velkoměstech a sídlech střední velikosti.
 
-## Data na prodej
-<right>
-	<p>
-	<b>KAREL HYNEK MÁCHA</b>
-	</p><p>
-	Karel Hynek Mácha (16. listopadu 1810 Praha-Malá Strana[1] – 6. listopadu 1836 Litoměřice[2]) byl český básník a prozaik, představitel českého romantismu a zakladatel moderní české poezie. Proslavil se jak svým životem, tak dílem, jemuž dominuje Máj (1836).
-	</p>
-</right>
+Ukazují to analýzy politologa Jakuba Lyska z Univerzity Palackého v Olomouci: „Střední třída, lidé ve městech střední velikosti, podpořili koalici Spolu. Nebyla to Praha, nebylo to Brno, kdo potopil Andreje Babiše, bylo to maloměsto: živnostníci, učitelé a lékaři v menších městech,“ říká. „Patrně si uvědomili, že migrace nebude největším problémem tohoto volebního období, ale bude to ekonomika. A koalici Spolu se podařilo ekonomická témata velmi dobře zvednout.“
 
-I pokud netelefonujeme nebo neposíláme SMS, telefon pravidelně komunikuje s vysílači v síti mobilního operátora. Z dat o síle signálu a použité anténě je možné odvodit, kde se přibližně telefon nachází a jak dlouhou dobu na místě strávil.
+Podle statistického modelu, který se osvědčil už v předchozích volbách,
 
-Mobilní operátor má ["zákonnou povinnost"](https://www.zakonyprolidi.cz/cs/2005-127/zneni-20160919#p97-3) takové informace uchovávat, a to půl roku do minulosti, přistupovat k nim ale mohou jen bezpečnostní složky, typicky policie nebo rozvědka.
+Proč zmizely KSČM a ČSSD z poslanecké sněmovny? Důvodem je Andrej Babiš. Tým Andreje Babiše velmi chytře a velmi dobře zvedl téma migrace. Tím mobilizoval vlastní vboliče. Víme z dat, že to byli zejména senioři, na které velmi dovře působil závěrečný klip. Jednak tím zvedl volební účast, protože mobilizoval i voliče Spolu z těch středně velkých měst a zároveň přebral poslwední zbytek voličů KSČM a ČSSD.
 
-Operátoři ale obdobné informace mohou anonymizovat (tedy "zbavit" identifikace konkrétního uživatele) a agregovat, tedy spojit informace o jednotlivcích do jakýchsi skupin. Výsledná obecná čísla pak přeprodávají dál, například marketingovým firmám či dopravním analytikům. Zpětně z nich nejde dovodit, kde se pohybuje každý jednotlivec, dávají ale určitý přehled o obecném chování obyvatel nějakého místa.
+Nejsou to nějaké velké přelivy. Ananlýza výsledků voleb ukazuje, že ten poslední zbytek výáhajících voličů jestli voluit KSČNM nebio ANO, hjnutí Ano v tyěchto volbách přebralo. Tím pádem se obě strany dostaly pod 10 procent.
+
+Skutečně to zatím vypadá, že volební účast ve strukturálně postižených krajích bude nižší... Vol. účast je relativně nižší oproti volbám 2017 v obcích, kde je vyšší podíl seniorů, vyšší nezaměstnanost a vyšší podíl exekucí...
+
+Polarizace byla velká, hnutí ANO to přestřelilo. Kampaň hnutí ANO zaměřená na uprchlíky a proti Pirátům mobilizovala seniory. Naopak ta útočnost mobilizovala příznivce obou koalic. To, že lidé znali mnoho lokálních lídrů koalice SPOLU nebo STAN rozhodlo v neprospěch Pirátů spíše než negativní kampaň AB. Piráti jsou strukturálně slabou stranou, v krajích nemají silné kandidáty. Nejsou zakořenění v regionech.
+
+Letošní volby, když se podíváme na kroužky u koalice SPOLU ukazují, že jsou to voliči, kteří podporují lokální osobnosti v místě bydliště. To rozhodlo ve prospěch koalice SPOLU a ve prospěch kroužkování Starostů, kteří získali nepoměrně více mandátů.
+
+Pirátská strana nemá tak výrazné osobnosti. Oproti tomu kandidátka Starostů a nezávislých byla velmi dobře postavena. Ve spoustě krajů neměli Piráti na kandidátce ani své lokální a regionální lídry.
+
+Myslím, že právě v Sudetech od Andreje Babiše odešli voliči střední třídy. Anti migrační politikou tuto vrstvu obyvatel nejspíše neoslovil, kampaň pro ně byla nejspíše příliš agresivní. KSČM a ČSSD si možná za ten volební výsledek mohou samy. Poslední zbytky těchto voličů Andrej Babiš přebral.
+
+Lidem začalo docházet, že se zdražuje a koalice SPOLU toto téma dobře uchopila a začala o tom mluvit. Spoustě lidem, kteří se nakonec museli rozhodnout mezi Andrejem Babišem a jinou stranou, tak neměli moc na výběr. ČSSD měla program založený na distribuci státních zdrojů, dluh a deficit ČR je velký, spousta lidí si to racionálně vyhodnotila, že bude lepší zvolit více pravicovou vládu, která bude mít za úkol státní finance napravit.
+
+Spousta lidí středních vrstev se podívala na hlasovací lístky a vybrala koalici, ve které viděla známé tváře.
+
+Andrej Babiš říká, že mu Praha prohrála volby. Není to pravda. Prohrály mu to středně velká města po celé republice.

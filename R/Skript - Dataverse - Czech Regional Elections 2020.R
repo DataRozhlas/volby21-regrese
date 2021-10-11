@@ -15,14 +15,14 @@ library(haven)
 library(ggplot2)
 library(coefplot)
 library(texreg)
+library(dplyr)
 
 
 # Loading the file "KRAJ_2020_COMPLET.sav" :
 
 
-setwd("~/ArcCR500/Výsledky voleb/Kraj 2020")   # change to your folder where you have downloaded the datafile
 
-KRAJ_2020 <- read_sav("KRAJ_2020_COMPLET.sav")
+KRAJ_2020 <- read_sav("../data/KRAJ_2020_COMPLET.sav")
 
 
 # Description of the file:
