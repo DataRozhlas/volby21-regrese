@@ -8,12 +8,20 @@ options: [noheader, nopic] #wide, noheader (, nopic)
 
 ---
 
+Radost z výsledku voleb mají letos hlavně lidé, kterým se už před nimi dařilo dobře. Zatímco místa, kde se vyskytuje víc vysokoškoláků či podnikatelů, volily častěji jednu z vítězných koalic, oblasti s vyšším podílem nezaměstnaných či lidí v exekuci se spíše přiklonily k poraženému ANO či k SPD. Na rozdíl od předchozích voleb nebyl tak výrazný kontrast mezi výsledky ve velkoměstech a sídlech střední velikosti.
+
+Ukazují to analýzy politologa Jakuba Lyska z Univerzity Palackého v Olomouci: „Střední třída, lidé ve městech střední velikosti, podpořili koalici Spolu. Nebyla to Praha, nebylo to Brno, kdo potopil Andreje Babiše, bylo to maloměsto: živnostníci, učitelé a lékaři v menších městech,“ říká. „Patrně si uvědomili, že migrace nebude největším problémem tohoto volebního období, ale že to bude ekonomika. A koalici Spolu se podařilo ekonomická témata velmi dobře zvednout.“
+
+To ukazuje i srovnávací mapa, ve které jsou červeně vybarvené obce, kde si koalice od minulých voleb polepšila, modře pak místa, kde měla horší výsledek než součet jednotlivých stran, tedy ODS, TOP09 a KDU-ČSL z roku 2017. Takových obcí je výrazná menšina.
+
+V mapě si můžete porovnat letošní a minulé výsledky také u ostatních parlamentních stran.
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
 <link rel="stylesheet" href="https://data.irozhlas.cz/psp21-srovnani/styl.css">
 
 <select name="topic" id="topic">
-    <option value="ano" selected>ANO</option>
     <option value="spolu">SPOLU</option>
+    <option value="ano">ANO</option>
     <option value="pirstan">Piráti+STAN</option>
     <option value="spd">SPD</option>
     <option value="cssd">ČSSD</option>
@@ -34,11 +42,7 @@ options: [noheader, nopic] #wide, noheader (, nopic)
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <script src="https://data.irozhlas.cz/psp21-srovnani/js/script.js"></script>
 
-Radost z výsledku voleb budou mít letos častěji lidé, kterým se už před nimi dařilo dobře. Zatímco místa, kde se vyskytuje víc vysokoškoláků či podnikatelů, volily častěji jednu z koalic, oblasti s vyšším podílem nezaměstnaných či lidí v exekuci se spíše přiklonily k ANO či k SPD. Na rozdíl od předchozích voleb nebyl tak výrazný kontrast mezi výsledky ve velkoměstech a sídlech střední velikosti.
-
-Ukazují to analýzy politologa Jakuba Lyska z Univerzity Palackého v Olomouci: „Střední třída, lidé ve městech střední velikosti, podpořili koalici Spolu. Nebyla to Praha, nebylo to Brno, kdo potopil Andreje Babiše, bylo to maloměsto: živnostníci, učitelé a lékaři v menších městech,“ říká. „Patrně si uvědomili, že migrace nebude největším problémem tohoto volebního období, ale bude to ekonomika. A koalici Spolu se podařilo ekonomická témata velmi dobře zvednout.“
-
-Podle statistického modelu, který se osvědčil v předchozích volbách,
+Podle statistického modelu politologa Lyska měl z demografických ukazatelů největší vliv na výsledek voleb v daném okrsku podíl podnikatelů: Každý procentní bod podnikatelů navíc znamenal o 1,28 procentního bodu lepší výsledek pro Spolu a 1,07 horší pro ANO.
 
 Proč zmizely KSČM a ČSSD z poslanecké sněmovny? Důvodem je Andrej Babiš. Tým Andreje Babiše velmi chytře a velmi dobře zvedl téma migrace. Tím mobilizoval vlastní vboliče. Víme z dat, že to byli zejména senioři, na které velmi dovře působil závěrečný klip. Jednak tím zvedl volební účast, protože mobilizoval i voliče Spolu z těch středně velkých měst a zároveň přebral poslwední zbytek voličů KSČM a ČSSD.
 
