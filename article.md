@@ -45,7 +45,11 @@ V mapě si můžete porovnat letošní a minulé výsledky také u ostatních pa
 Podle výpočtů politologa Lyska měl z demografických ukazatelů největší vliv na výsledek voleb v daném okrsku podíl podnikatelů. Každý procentní bod podnikatelů navíc znamenal o 1,28 procentního bodu lepší výsledek pro Spolu a o 1,07 bodu horší pro ANO.
 
 <wide><div style="display:flex;flex-wrap:wrap"><div class="graf" id="ano"></div><div class="graf" id="spolu"></div><div class="graf" id="stan"></div><div class="graf" id="spd"></div></wide>
+
 <br>
+
 ANO a SPD se lépe než ve zbytku země dařilo v místech s vyšším podílem nezaměstnaných a lidí v exekucích. Na překreslení výsledné volební mapy to ale nestačilo: „Myslím, že dokonce i v Sudetech od Andreje Babiše odešli voliči střední třídy. Jeho kampaň pro ně byla nejspíš příliš agresivní,“ domnívá se politolog.
+
+<br>
 
 Hnutí ANO tak zůstali především voliči starší 65 let. „Přílišné zacílení volební kampaně na seniory se nakonec ukázalo jako chyba, protože hnutí ANO ztratilo mladší voliče střední generace, kteří přešli ke koalici SPOLU,“ říká Lysek.
