@@ -47,3 +47,5 @@ Podle výpočtů politologa Lyska měl z demografických ukazatelů největší 
 <wide><div style="display:flex;flex-wrap:wrap"><div class="graf" id="ano"></div><div class="graf" id="spolu"></div><div class="graf" id="stan"></div><div class="graf" id="spd"></div></wide>
 <br>
 ANO a SPD se lépe než ve zbytku země dařilo v místech s vyšším podílem nezaměstnaných a lidí v exekucích. Na překreslení výsledné volební mapy to ale nestačilo: „Myslím, že právě v Sudetech od Andreje Babiše odešli voliči střední třídy. Jeho kampaň pro ně byla nejspíš příliš agresivní,“ domnívá se politolog.
+
+Hnutí ANO tak zůstali především voliči starší 65 let. „Přílišné zacílení volební kampaně na seniory se nakonec ukázalo jako chyba, protože hnutí ANO ztratilo mladší voliče střední generace, kteří přešli ke koalici SPOLU,“ říká Lysek.
