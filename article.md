@@ -52,4 +52,4 @@ ANO a SPD se lépe než ve zbytku země dařilo v místech s vyšším podílem 
 
 <br>
 
-Hnutí ANO tak zůstali především voliči starší 65 let. „Přílišné zacílení volební kampaně na seniory se nakonec ukázalo jako chyba, protože hnutí ANO ztratilo mladší voliče střední generace, kteří přešli ke koalici SPOLU,“ říká Lysek.
+Hnutí ANO tak zůstali především voliči starší 65 let. „Přílišné zacílení volební kampaně na seniory se nakonec ukázalo jako chyba, protože hnutí ANO ztratilo mladší voliče střední generace. Ti přešli ke koalici Spolu,“ hodnotí Lysek.
