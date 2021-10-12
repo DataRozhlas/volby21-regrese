@@ -1,5 +1,5 @@
-title: "Srovnávací mapa: Kde parlamentní strany od minulých voleb ztratily a kde si polepšily?"
-perex: "Statistická analýza volebních výsledků a složení obyvatelstva v jednotlivých okrscích naznačuje, v čem se liší voliči stran, které se dostaly do parlamentu."
+title: "Srovnávací mapa: Kde si strany od minulých voleb polepšily a kde ztratily"
+perex: "Letošní sněmovní volby nebyly střetem velkých a malých měst, ale úspěšnějších a méně úspěšných regionů, odhaluje statistická analýza."
 coverimg: https://interaktivni.rozhlas.cz/brexit/media/cover.jpg
 coverimg_note: "Foto <a href='https://ctk.cz'>ČTK</a>"
 styles: []
@@ -8,11 +8,11 @@ options: [noheader, nopic] #wide, noheader (, nopic)
 
 ---
 
-Radost z výsledku voleb mají letos hlavně lidé, kterým se už před nimi dařilo dobře. Zatímco místa, kde se vyskytuje víc vysokoškoláků či podnikatelů, volily častěji jednu z vítězných koalic, oblasti s vyšším podílem nezaměstnaných či lidí v exekuci se spíše přiklonily k poraženému ANO či k SPD. Na rozdíl od předchozích voleb nebyl tak výrazný kontrast mezi výsledky ve velkoměstech a sídlech střední velikosti.
+Radost z výsledku letošních voleb mají hlavně lidé, kterým se daří relativně dobře. Zatímco místa s vyšším podílem vysokoškoláků nebo podnikatelů volila častěji jednu ze dvou koalic, které teď jednají o sestavení vlády, okrsky s vyšší nezaměstnaností a více lidmi v exekuci se přikláněly spíše k poraženému ANO či k SPD. Na rozdíl od předchozích voleb nebyl tak výrazný kontrast mezi výsledky ve velkoměstech a v sídlech střední velikosti.
 
-Ukazují to analýzy politologa Jakuba Lyska z Univerzity Palackého v Olomouci: „Střední třída, lidé ve městech střední velikosti, podpořili koalici Spolu. Nebyla to Praha, nebylo to Brno, kdo potopil Andreje Babiše, bylo to maloměsto: živnostníci, učitelé a lékaři v menších městech,“ říká. „Patrně si uvědomili, že migrace nebude největším problémem tohoto volebního období, ale že to bude ekonomika. A koalici Spolu se podařilo ekonomická témata zvednout.“
+Ukazují to analýzy politologa Jakuba Lyska z Univerzity Palackého v Olomouci. „Střední třída, lidé ve městech střední velikosti, podpořili koalici Spolu. Nebyla to Praha, nebylo to Brno, kdo potopil Andreje Babiše, bylo to maloměsto: živnostníci, učitelé a lékaři v menších městech,“ [říká](https://www.irozhlas.cz/volby/snemovni-volby-2021-vysledky-voleb-volebni-ucast-mapa-datova-zurnalistika_2110111437_nkr). „Patrně si uvědomili, že největším problémem tohoto volebního období nebude migrace, ale ekonomika. A koalici Spolu se podařilo ekonomická témata zvednout.“
 
-To ukazuje i srovnávací mapa, ve které jsou červeně vybarvené obce, kde si koalice od minulých voleb polepšila, modře pak místa, kde měla horší výsledek než součet jednotlivých stran, tedy ODS, TOP09 a KDU-ČSL z roku 2017. Takových obcí moc není.
+To ukazuje i srovnávací mapa. Červeně vybarvené jsou v ní obce, kde si koalice Spolu od minulých voleb polepšila, modře pak místa, kde měla horší výsledek než součet zisků ODS, TOP09 a KDU-ČSL z roku 2017. Takových obcí moc není.
 
 V mapě si můžete porovnat letošní a minulé výsledky také u ostatních parlamentních stran.
 
@@ -42,8 +42,8 @@ V mapě si můžete porovnat letošní a minulé výsledky také u ostatních pa
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <script src="https://data.irozhlas.cz/psp21-srovnani/js/script.js"></script>
 
-Podle výpočtů politologa Lyska měl z demografických ukazatelů největší vliv na výsledek voleb v daném okrsku podíl podnikatelů: Každý procentní bod podnikatelů navíc znamenal o 1,28 procentního bodu lepší výsledek pro Spolu a 1,07 horší pro ANO.
+Podle výpočtů politologa Lyska měl z demografických ukazatelů největší vliv na výsledek voleb v daném okrsku podíl podnikatelů. Každý procentní bod podnikatelů navíc znamenal o 1,28 procentního bodu lepší výsledek pro Spolu a o 1,07 bodu horší pro ANO.
 
 <wide><div style="display:flex;flex-wrap:wrap"><div class="graf" id="ano"></div><div class="graf" id="spolu"></div><div class="graf" id="stan"></div><div class="graf" id="spd"></div></wide>
 <br>
-ANO a SPD častěji boodovaly v místech s vyšším podílem nezaměstnaných a lidí v exekucích. Na překreslení výsledné volební mapy to ale nestačilo: „Myslím, že právě v Sudetech od Andreje Babiše odešli voliči střední třídy. Jeho kampaň pro ně byla nejspíš příliš agresivní,“ domnívá se politolog.
+ANO a SPD se lépe než ve zbytku země dařilo v místech s vyšším podílem nezaměstnaných a lidí v exekucích. Na překreslení výsledné volební mapy to ale nestačilo: „Myslím, že právě v Sudetech od Andreje Babiše odešli voliči střední třídy. Jeho kampaň pro ně byla nejspíš příliš agresivní,“ domnívá se politolog.
